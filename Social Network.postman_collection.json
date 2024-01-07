@@ -1,0 +1,587 @@
+{
+	"info": {
+		"_postman_id": "927b0e3a-f4f8-4087-ab98-3ca09fd9b298",
+		"name": "Social Network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32175425",
+		"_collection_link": "https://orange-robot-841042.postman.co/workspace/407f18ce-c013-41f2-a833-9efef371786e/collection/32175425-927b0e3a-f4f8-4087-ab98-3ca09fd9b298?action=share&source=collection_link&creator=32175425"
+	},
+	"item": [
+		{
+			"name": "get_all_apis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_first_user_page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_second_user_page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/?page=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_user_profiles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profiles/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profiles",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"manisha\",\n    \"email\":\"manisha@gmail.com\",\n    \"password\":\"mansisha123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token_generated",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"rishabh\",\n    \"password\":\"rishabh123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list_friends",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM5MTgwLCJpYXQiOjE3MDQ2MjExODAsImp0aSI6IjA0NjMzODgwNzQ3MTRlMTFhMTEwNmVjMzE0ZmExZDE2IiwidXNlcl9pZCI6M30.BovAqjxEHLIfyEiIDG-vRGSD9rAw-1ojneYDM6vAsXw",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjEzODk5LCJpYXQiOjE3MDQ2MTIwOTksImp0aSI6IjUwNTIwOGI0NjE3NzQwYTM4MThmYjE2YjBlMzgyZDEwIiwidXNlcl9pZCI6Mn0.LAypcI2aOsqb6K3uaCk7lV06dH_bj9J4ri52yRwb3T0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token-verify",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjE0OTYyLCJpYXQiOjE3MDQ2MTMxNjIsImp0aSI6IjQxNjY1ODlhODRjNDRhZTg4MjI1ZDNiNjQ1YmU5NTM1IiwidXNlcl9pZCI6Mn0.P1Vr4stxLjgfKFoIzES4TZTmdWLLYwGu45Cq74ZHbfs",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token-verify",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token-verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_profile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjE2NTY4LCJpYXQiOjE3MDQ2MTIwOTksImp0aSI6IjRhMjkxNmE2MzBjMjRmZmRhMTQ3NDBkYmVhOGZjZmJhIiwidXNlcl9pZCI6Mn0.m3SiqvA7Sb4qyI8iAdB8i_RcekGq8B1GHiOpCouuUUU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gender\": \"male\",\n    \"dob\": \"2024-01-16\",\n    \"phone\": null,\n    \"works_at\": \"Infosys\",\n    \"lives_in\": \"Delhi\",\n    \"studies_at\": \"Na\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/profiles/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profiles",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token_refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "refresh",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwNTQ3ODc2OCwiaWF0IjoxNzA0NjE0NzY4LCJqdGkiOiI1YzU5MTVhZjdlMzM0NjVlYTExYWU2MTAxZjYwZDg2YiIsInVzZXJfaWQiOjJ9.Z7ka9ywrei8RZtZx_XfHgkVK7gSl9jxdilAiEOOBrDc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find_more_friend",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM0NjE3LCJpYXQiOjE3MDQ2MTQ3NjgsImp0aSI6ImVjMTA5OWNkNTE0ODQ2MzJiMTI5NTU3NGRjMzJiYmI3IiwidXNlcl9pZCI6Mn0.sy-gljnvaRZIABr0p810E5-A6N_NQwtFA6nmMF0jP4A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"criteria\":\"sa\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/find_friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						"find_friends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pending_request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM5MTgwLCJpYXQiOjE3MDQ2MjExODAsImp0aSI6IjA0NjMzODgwNzQ3MTRlMTFhMTEwNmVjMzE0ZmExZDE2IiwidXNlcl9pZCI6M30.BovAqjxEHLIfyEiIDG-vRGSD9rAw-1ojneYDM6vAsXw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/incoming_requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						"incoming_requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pending_sent",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM5MTgwLCJpYXQiOjE3MDQ2MjExODAsImp0aSI6IjA0NjMzODgwNzQ3MTRlMTFhMTEwNmVjMzE0ZmExZDE2IiwidXNlcl9pZCI6M30.BovAqjxEHLIfyEiIDG-vRGSD9rAw-1ojneYDM6vAsXw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/sent_requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						"sent_requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send_request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM5MTgwLCJpYXQiOjE3MDQ2MjExODAsImp0aSI6IjA0NjMzODgwNzQ3MTRlMTFhMTEwNmVjMzE0ZmExZDE2IiwidXNlcl9pZCI6M30.BovAqjxEHLIfyEiIDG-vRGSD9rAw-1ojneYDM6vAsXw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"request_to\" : 2,\n    \"status\" : \"pending\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "accept_request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM0NjE3LCJpYXQiOjE3MDQ2MTQ3NjgsImp0aSI6ImVjMTA5OWNkNTE0ODQ2MzJiMTI5NTU3NGRjMzJiYmI3IiwidXNlcl9pZCI6Mn0.sy-gljnvaRZIABr0p810E5-A6N_NQwtFA6nmMF0jP4A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/4/friendrequests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						"4",
+						"friendrequests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete_request",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM0NjE3LCJpYXQiOjE3MDQ2MTQ3NjgsImp0aSI6ImVjMTA5OWNkNTE0ODQ2MzJiMTI5NTU3NGRjMzJiYmI3IiwidXNlcl9pZCI6Mn0.sy-gljnvaRZIABr0p810E5-A6N_NQwtFA6nmMF0jP4A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/4/delete_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						"4",
+						"delete_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "undo_requests",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA0NjM0NjE3LCJpYXQiOjE3MDQ2MTQ3NjgsImp0aSI6ImVjMTA5OWNkNTE0ODQ2MzJiMTI5NTU3NGRjMzJiYmI3IiwidXNlcl9pZCI6Mn0.sy-gljnvaRZIABr0p810E5-A6N_NQwtFA6nmMF0jP4A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends/4/undo_requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends",
+						"4",
+						"undo_requests",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
